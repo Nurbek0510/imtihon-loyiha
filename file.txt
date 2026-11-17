@@ -1,0 +1,50 @@
+Funksiyalar va o‘zgaruvchilar
+- import mysql.connector — Python’ga MySQL bilan ishlash kutubxonasini ulaydi.
+- def — funksiya yaratadi. Masalan, def vazifa_qoshish(db): “vazifa qo‘shish” nomli funksiya boshlanayotganini bildiradi.
+- () — funksiya chaqirilganda beriladigan qiymatlar shu qavs ichida yoziladi. vazifa_qoshish(db) dagi db — funksiyaga uzatilgan baza ulanishi.
+- return — funksiyadan qiymat qaytaradi. return ning o‘zi esa funksiyani shu joyda tugatadi.
+- db — MySQL bazasiga ulanishni saqlab turgan o‘zgaruvchi.
+- cursor — MySQL’ga so‘rov yuborish va undan natija olish vositasi.
+Matn va tekshiruvlar
+- input("...") — foydalanuvchidan klaviatura orqali matn oladi.
+- .strip() — matn boshidagi va oxiridagi bo‘sh joylarni olib tashlaydi.
+  Masalan, "  vazifa  ".strip() → "vazifa".
+- if not nomi: — nomi bo‘shmi, shuni tekshiradi. Bo‘sh bo‘lsa, ichidagi kod bajariladi.
+- None — qiymat yo‘qligini bildiradi. Bu kodda izoh yoki muddat kiritilmagan bo‘lsa ishlatiladi.
+- or — “yoki” degani. izoh or '-' — izoh bo‘sh bo‘lsa, ekranga - chiqaradi.
+MySQL buyruqlari
+- mysql.connector.connect(...) — MySQL bazasiga ulanadi.
+- db.cursor() — SQL buyruqlarini bajarish uchun cursor yaratadi.
+- cursor.execute(...) — SQL so‘rovini bajaradi.
+- INSERT INTO — jadvalga yangi vazifa qo‘shadi.
+- SELECT — jadvaldan ma’lumot oladi.
+- FROM tasks — ma’lumot tasks jadvalidan olinishini bildiradi.
+- WHERE — natijani shart bo‘yicha qidiradi yoki cheklaydi.
+- LIKE — matn ichidan qisman mos keladigan qiymatni qidiradi.
+- %s — SQL so‘rovida qiymat qo‘yiladigan o‘rin. Haqiqiy qiymatlar execute() ga alohida uzatiladi.
+- ORDER BY id — natijalarni id bo‘yicha tartiblaydi.
+- db.commit() — bazaga kiritilgan o‘zgarishni saqlaydi.
+- cursor.fetchall() — so‘rov topgan barcha qatorlarni oladi.
+- cursor.close() — cursor’ni yopadi.
+Sikl va matn chiqarish
+- for vazifa in vazifalar: — vazifalar ichidagi har bir qatorni bittalab oladi.
+- id, nomi, izoh, holat, muddat = vazifa — bitta qator ichidagi qiymatlarni alohida o‘zgaruvchilarga ajratadi.
+- print(...) — ekranga chiqaradi.
+- f"..." — matn ichiga o‘zgaruvchi qiymatini qo‘shish usuli. Masalan, f"Vazifa: {nomi}".
+- {} — f-string ichida o‘zgaruvchi qiymati chiqadigan joy.
+- \n — yangi qatorga o‘tadi.
+- % — LIKE qidiruvida istalgan belgilar ketma-ketligini anglatadi. f"%{so_z}%" so‘zi matnning istalgan qismida uchraydigan natijalarni qidiradi.
+
+
+# Vazifalar ro‘yxati — main.py
+
+- `import` — funksiyalarni `funksiyalar.py` faylidan oladi.
+- `main()` — dasturning asosiy qismini ishga tushiradi.
+- `bazaga_ulanish()` — MySQL bazasiga ulanadi.
+- `while True` — menyuni takroran ko‘rsatadi.
+- `input().strip()` — foydalanuvchi tanlovini oladi va chekka bo‘sh joylarni olib tashlaydi.
+- `if / elif` — tanlovga qarab vazifa qo‘shish, ko‘rish yoki qidirish funksiyasini chaqiradi.
+- `break` — `0` tanlanganda menyu siklini to‘xtatadi.
+- `db.close()` — dastur tugaganda baza ulanishini yopadi.
+
+**Menyu:** 1 — Qo‘shish · 2 — Ko‘rish · 3 — Qidirish · 0 — Chiqish
